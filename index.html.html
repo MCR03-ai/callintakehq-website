@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CallIntakeHQ – Never Miss a Lead Again</title>
+<meta name="description" content="AI-powered call answering and reputation management for plumbers. Capture every lead, get 5-star reviews on autopilot.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#0B1D33;--navy-light:#122844;--blue:#2E8CFF;--blue-glow:rgba(46,140,255,0.15);--teal:#00D4AA;--teal-glow:rgba(0,212,170,0.12);--orange:#FF6B35;--white:#FFFFFF;--gray-100:#F4F6F9;--gray-200:#E2E7EE;--gray-400:#8B95A5;--gray-600:#5A6577;--gray-800:#2D3748;--serif:'Instrument Serif',Georgia,serif;--sans:'DM Sans',-apple-system,sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--gray-800);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.container{max-width:1140px;margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:16px 32px;border-radius:8px;font-family:var(--sans);font-size:16px;font-weight:600;text-decoration:none;transition:all .3s ease;cursor:pointer;border:none}
+.btn-primary{background:var(--blue);color:var(--white);box-shadow:0 4px 20px rgba(46,140,255,.35)}
+.btn-primary:hover{background:#1a7aee;transform:translateY(-2px);box-shadow:0 6px 28px rgba(46,140,255,.45)}
+.btn-outline{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.3)}
+.btn-outline:hover{border-color:var(--white);background:rgba(255,255,255,.08)}
+.btn-dark{background:var(--navy);color:var(--white);box-shadow:0 4px 20px rgba(11,29,51,.25)}
+.btn-dark:hover{background:var(--navy-light);transform:translateY(-2px)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,29,51,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;max-width:1140px;margin:0 auto;padding:16px 24px}
+.logo{font-family:var(--sans);font-weight:700;font-size:20px;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo-icon{width:36px;height:36px;background:var(--blue);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;color:white}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{color:var(--gray-400);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{padding:10px 22px!important;font-size:14px!important;border-radius:6px!important}
+.hero{background:var(--navy);padding:160px 0 100px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;right:-20%;width:800px;height:800px;background:radial-gradient(circle,var(--blue-glow) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-30%;left:-10%;width:600px;height:600px;background:radial-gradient(circle,var(--teal-glow) 0%,transparent 70%);pointer-events:none}
+.hero-content{position:relative;z-index:2;max-width:720px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(46,140,255,.12);border:1px solid rgba(46,140,255,.25);border-radius:100px;padding:8px 18px;margin-bottom:28px;font-size:13px;font-weight:600;color:var(--blue);letter-spacing:.5px;text-transform:uppercase}
+.hero-badge span{display:inline-block;width:6px;height:6px;background:var(--teal);border-radius:50%}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(40px,5.5vw,64px);line-height:1.1;color:var(--white);margin-bottom:24px}
+.hero h1 em{font-style:italic;color:var(--teal);text-decoration:underline;text-decoration-color:rgba(0,212,170,.3);text-underline-offset:6px}
+.hero p{font-size:19px;line-height:1.65;color:var(--gray-400);margin-bottom:36px;max-width:560px}
+.hero-buttons{display:flex;gap:16px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:48px;margin-top:64px;padding-top:40px;border-top:1px solid rgba(255,255,255,.08)}
+.hero-stat h3{font-family:var(--serif);font-size:36px;color:var(--teal);font-weight:400}
+.hero-stat p{font-size:13px;color:var(--gray-400);margin-top:4px;text-transform:uppercase;letter-spacing:.5px}
+.problem{padding:100px 0;background:var(--gray-100)}
+.problem-header{text-align:center;max-width:680px;margin:0 auto 60px}
+.section-label{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--blue);margin-bottom:16px}
+.problem-header h2{font-family:var(--serif);font-size:clamp(32px,4vw,44px);line-height:1.2;color:var(--navy);margin-bottom:16px}
+.problem-header p{font-size:18px;color:var(--gray-600);line-height:1.6}
+.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.problem-card{background:var(--white);border-radius:16px;padding:36px;border:1px solid var(--gray-200);transition:transform .3s,box-shadow .3s}
+.problem-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.08)}
+.problem-icon{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px}
+.problem-card:nth-child(1) .problem-icon{background:#FFF0EB}
+.problem-card:nth-child(2) .problem-icon{background:#E8F5FF}
+.problem-card:nth-child(3) .problem-icon{background:#E6FFF8}
+.problem-card h3{font-size:20px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.problem-card .stat{font-family:var(--serif);font-size:32px;color:var(--orange);margin-bottom:8px}
+.problem-card p{font-size:15px;color:var(--gray-600);line-height:1.6}
+.how{padding:100px 0}
+.how-header{text-align:center;max-width:600px;margin:0 auto 70px}
+.how-header h2{font-family:var(--serif);font-size:clamp(32px,4vw,44px);line-height:1.2;color:var(--navy);margin-bottom:16px}
+.how-header p{font-size:18px;color:var(--gray-600);line-height:1.6}
+.how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;position:relative}
+.how-steps::before{content:'';position:absolute;top:36px;left:15%;right:15%;height:2px;background:linear-gradient(90deg,var(--blue),var(--teal));opacity:.2}
+.how-step{text-align:center;position:relative}
+.step-num{width:72px;height:72px;border-radius:50%;margin:0 auto 24px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:28px;color:var(--white);background:linear-gradient(135deg,var(--blue),var(--navy));box-shadow:0 8px 24px rgba(46,140,255,.25);position:relative;z-index:2}
+.how-step h3{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.how-step p{font-size:15px;color:var(--gray-600);line-height:1.6;max-width:280px;margin:0 auto}
+.features{padding:100px 0;background:var(--navy);color:var(--white)}
+.features-header{text-align:center;max-width:620px;margin:0 auto 60px}
+.features-header .section-label{color:var(--teal)}
+.features-header h2{font-family:var(--serif);font-size:clamp(32px,4vw,44px);line-height:1.2;color:var(--white)}
+.features-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.feature-card{background:var(--navy-light);border-radius:16px;padding:36px;border:1px solid rgba(255,255,255,.06);transition:border-color .3s}
+.feature-card:hover{border-color:rgba(46,140,255,.3)}
+.feature-emoji{font-size:28px;margin-bottom:16px;display:block}
+.feature-card h3{font-size:18px;font-weight:700;margin-bottom:10px}
+.feature-card p{font-size:15px;color:var(--gray-400);line-height:1.6}
+.pricing{padding:100px 0;background:var(--gray-100)}
+.pricing-header{text-align:center;max-width:600px;margin:0 auto 60px}
+.pricing-header h2{font-family:var(--serif);font-size:clamp(32px,4vw,44px);line-height:1.2;color:var(--navy);margin-bottom:16px}
+.pricing-header p{font-size:18px;color:var(--gray-600);line-height:1.6}
+.pricing-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;max-width:820px;margin:0 auto}
+.pricing-card{background:var(--white);border-radius:20px;padding:44px 36px;border:2px solid var(--gray-200);transition:transform .3s,box-shadow .3s;position:relative}
+.pricing-card:hover{transform:translateY(-4px)}
+.pricing-card.featured{border-color:var(--blue);box-shadow:0 16px 48px rgba(46,140,255,.15)}
+.popular-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--blue);color:white;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:6px 20px;border-radius:100px}
+.pricing-card h3{font-size:18px;font-weight:600;color:var(--gray-600);margin-bottom:16px}
+.pricing-price{font-family:var(--serif);font-size:52px;color:var(--navy);margin-bottom:4px}
+.pricing-price span{font-family:var(--sans);font-size:16px;color:var(--gray-400)}
+.pricing-desc{font-size:14px;color:var(--gray-600);margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--gray-200)}
+.pricing-features{list-style:none;margin-bottom:32px}
+.pricing-features li{display:flex;align-items:flex-start;gap:12px;font-size:15px;color:var(--gray-800);padding:8px 0}
+.pricing-features li::before{content:'✓';color:var(--teal);font-weight:700;flex-shrink:0;margin-top:1px}
+.pricing-features li.disabled{color:var(--gray-400)}
+.pricing-features li.disabled::before{content:'—';color:var(--gray-400)}
+.pricing-card .btn{width:100%;justify-content:center}
+.roi{padding:100px 0;background:var(--white)}
+.roi-inner{max-width:740px;margin:0 auto;text-align:center}
+.roi-header h2{font-family:var(--serif);font-size:clamp(32px,4vw,44px);color:var(--navy);margin-bottom:16px}
+.roi-header p{font-size:18px;color:var(--gray-600);margin-bottom:48px}
+.roi-box{background:var(--navy);border-radius:20px;padding:48px;color:var(--white);text-align:left}
+.roi-row{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.roi-row:last-child{border:none}
+.roi-row .label{font-size:16px;color:var(--gray-400)}
+.roi-row .value{font-family:var(--serif);font-size:24px}
+.roi-row.highlight .value{color:var(--teal);font-size:32px}
+.roi-row.highlight{padding:24px 0 8px;border:none}
+.roi-footnote{font-size:13px;color:var(--gray-400);margin-top:20px;text-align:center}
+.guarantee{padding:80px 0;background:var(--gray-100)}
+.guarantee-inner{max-width:720px;margin:0 auto;text-align:center;background:var(--white);border-radius:20px;padding:52px 44px;border:2px solid var(--gray-200)}
+.guarantee-icon{font-size:48px;margin-bottom:20px}
+.guarantee-inner h2{font-family:var(--serif);font-size:32px;color:var(--navy);margin-bottom:16px}
+.guarantee-inner p{font-size:17px;color:var(--gray-600);line-height:1.65;max-width:540px;margin:0 auto}
+.guarantee-points{display:flex;justify-content:center;gap:40px;margin-top:32px;flex-wrap:wrap}
+.guarantee-point{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:var(--navy)}
+.guarantee-point .check{width:28px;height:28px;border-radius:50%;background:rgba(0,212,170,.12);color:var(--teal);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700}
+.faq{padding:100px 0}
+.faq-header{text-align:center;max-width:600px;margin:0 auto 60px}
+.faq-header h2{font-family:var(--serif);font-size:clamp(32px,4vw,44px);color:var(--navy)}
+.faq-list{max-width:700px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--gray-200);padding:24px 0}
+.faq-question{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:17px;font-weight:600;color:var(--navy)}
+.faq-question::after{content:'+';font-size:24px;color:var(--blue);transition:transform .3s}
+.faq-item.open .faq-question::after{transform:rotate(45deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s}
+.faq-item.open .faq-answer{max-height:200px;padding-top:16px}
+.faq-answer p{font-size:15px;color:var(--gray-600);line-height:1.65}
+.final-cta{padding:100px 0;background:var(--navy);text-align:center;position:relative;overflow:hidden}
+.final-cta::before{content:'';position:absolute;top:-50%;left:50%;transform:translateX(-50%);width:1000px;height:1000px;background:radial-gradient(circle,var(--blue-glow) 0%,transparent 60%)}
+.final-cta-content{position:relative;z-index:2;max-width:600px;margin:0 auto}
+.final-cta h2{font-family:var(--serif);font-size:clamp(36px,4.5vw,52px);color:var(--white);line-height:1.15;margin-bottom:20px}
+.final-cta h2 em{color:var(--teal);font-style:italic}
+.final-cta p{font-size:18px;color:var(--gray-400);margin-bottom:36px}
+.final-cta .btn-primary{font-size:18px;padding:18px 40px}
+footer{background:#070F1A;padding:48px 0;text-align:center}
+footer p{font-size:14px;color:var(--gray-600)}
+footer a{color:var(--gray-400);text-decoration:none}
+@media(max-width:768px){.nav-links{display:none}.hero{padding:120px 0 70px}.hero-stats{flex-direction:column;gap:24px}.problem-grid,.features-grid,.how-steps{grid-template-columns:1fr}.pricing-grid{grid-template-columns:1fr;max-width:420px}.how-steps::before{display:none}.hero-buttons{flex-direction:column}.hero-buttons .btn{width:100%;justify-content:center}.roi-box{padding:28px}.roi-row{flex-direction:column;align-items:flex-start;gap:4px}.guarantee-points{flex-direction:column;align-items:center;gap:16px}.guarantee-inner{padding:36px 24px}}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner"><a href="#" class="logo"><div class="logo-icon">📞</div>CallIntakeHQ</a><div class="nav-links"><a href="#how">How It Works</a><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="#start" class="btn btn-primary nav-cta">Start Free Trial →</a></div></div></nav>
+
+<section class="hero"><div class="container"><div class="hero-content">
+<div class="hero-badge"><span></span> Built for plumbing professionals</div>
+<h1>Stop losing jobs to <em>missed calls</em></h1>
+<p>Your AI receptionist answers every call, captures lead details, prioritizes jobs by urgency &amp; location — and collects 5-star Google reviews after every job. Automatically.</p>
+<div class="hero-buttons"><a href="#start" class="btn btn-primary">Try 7 Days Free — No Card Required →</a><a href="#how" class="btn btn-outline">See How It Works</a></div>
+<div class="hero-stats"><div class="hero-stat"><h3>74%</h3><p>of plumber calls go unanswered</p></div><div class="hero-stat"><h3>$50K+</h3><p>lost revenue per year</p></div><div class="hero-stat"><h3>&lt; 2 sec</h3><p>our AI answer time</p></div></div>
+</div></div></section>
+
+<section class="problem"><div class="container">
+<div class="problem-header"><p class="section-label">The Problem</p><h2>Every missed call is money in your competitor's pocket</h2><p>You're under a sink. Your phone rings. By the time you check, they've already called someone else.</p></div>
+<div class="problem-grid">
+<div class="problem-card"><div class="problem-icon">📵</div><div class="stat">40%</div><h3>Calls Missed</h3><p>The average plumber misses nearly half of all incoming calls while on the job. Each one is a potential $300+ job gone.</p></div>
+<div class="problem-card"><div class="problem-icon">🏃</div><div class="stat">95%</div><h3>Don't Leave Voicemail</h3><p>Almost no one leaves a voicemail anymore. They hang up and call the next plumber on Google within 10 seconds.</p></div>
+<div class="problem-card"><div class="problem-icon">⭐</div><div class="stat">93%</div><h3>Check Reviews First</h3><p>Customers read Google reviews before calling. More 5-star reviews = more calls = more jobs. It's a loop.</p></div>
+</div></div></section>
+
+<section class="how" id="how"><div class="container">
+<div class="how-header"><p class="section-label">How It Works</p><h2>Set it up once. Never miss a lead again.</h2><p>Forward your calls to CallIntakeHQ when you can't answer. We handle the rest.</p></div>
+<div class="how-steps">
+<div class="how-step"><div class="step-num">1</div><h3>AI Answers Your Phone</h3><p>When you can't pick up, our AI receptionist answers in under 2 seconds. It sounds natural and professional — using your business name.</p></div>
+<div class="how-step"><div class="step-num">2</div><h3>Leads Get Sorted</h3><p>Every call is transcribed and organized by urgency, location, and job type. You see exactly which jobs to take first — in a clean summary sent to your inbox.</p></div>
+<div class="how-step"><div class="step-num">3</div><h3>Reviews Come In</h3><p>After you complete a job, an automatic SMS asks your customer for a Google review. Your rating climbs, your ranking improves, more calls come in.</p></div>
+</div></div></section>
+
+<section class="features" id="features"><div class="container">
+<div class="features-header"><p class="section-label">Features</p><h2>Everything you need to fill your schedule</h2></div>
+<div class="features-grid">
+<div class="feature-card"><span class="feature-emoji">🤖</span><h3>AI Receptionist</h3><p>Answers calls 24/7 using your business name. Collects caller name, location, problem description, and urgency level — just like a real receptionist.</p></div>
+<div class="feature-card"><span class="feature-emoji">📋</span><h3>Smart Job Prioritization</h3><p>See all leads sorted by distance to you, estimated job size, and urgency. Pick the most profitable jobs first. No more guessing.</p></div>
+<div class="feature-card"><span class="feature-emoji">⭐</span><h3>Automatic Review Collection</h3><p>After each job, customers receive a friendly SMS asking for a Google review. Most plumbers double their reviews within 60 days.</p></div>
+<div class="feature-card"><span class="feature-emoji">💬</span><h3>AI Review Responses</h3><p>Every new Google review gets a professional, personalized response — automatically. Keeps your profile active and shows customers you care.</p></div>
+<div class="feature-card"><span class="feature-emoji">📊</span><h3>Call Analytics</h3><p>Track how many calls you're capturing, which lead sources perform best, and how your Google rating trends over time. Data you can act on.</p></div>
+<div class="feature-card"><span class="feature-emoji">⚡</span><h3>60-Second Setup</h3><p>No apps to install. No software to learn. Just forward your calls when you're busy — we handle everything else. Works with your existing phone number.</p></div>
+</div></div></section>
+
+<section class="pricing" id="pricing"><div class="container">
+<div class="pricing-header"><p class="section-label">Pricing</p><h2>One saved job pays for a full year</h2><p>Simple pricing. No contracts. Cancel anytime. Start with a free 7-day trial.</p></div>
+<div class="pricing-grid">
+<div class="pricing-card">
+<h3>Call Rescue</h3><div class="pricing-price">$99 <span>/month</span></div>
+<p class="pricing-desc">AI call answering for busy plumbers who need to capture every lead.</p>
+<ul class="pricing-features"><li>AI receptionist (your business name)</li><li>Call transcription &amp; summary</li><li>Lead details emailed instantly</li><li>Up to 50 calls/month included</li><li>Works with your existing number</li><li class="disabled">Automatic review collection</li><li class="disabled">AI review responses</li><li class="disabled">Priority job sorting dashboard</li></ul>
+<a href="#start" class="btn btn-dark">Start Free Trial</a>
+</div>
+<div class="pricing-card featured">
+<div class="popular-badge">Most Popular</div>
+<h3>Call Rescue Pro</h3><div class="pricing-price">$249 <span>/month</span></div>
+<p class="pricing-desc">Complete call management + reputation growth on autopilot.</p>
+<ul class="pricing-features"><li>Everything in Call Rescue</li><li>Unlimited calls</li><li>Automatic Google review requests</li><li>AI-powered review responses</li><li>Smart job sorting (distance, urgency, profit)</li><li>Google review monitoring dashboard</li><li>Rating trend analytics</li><li>Priority support</li></ul>
+<a href="#start" class="btn btn-primary">Start Free Trial →</a>
+</div></div></div></section>
+
+<section class="roi"><div class="container"><div class="roi-inner">
+<div class="roi-header"><p class="section-label">The Math</p><h2>How one call pays for itself</h2><p>Let's say you miss just 10 calls per week. Here's what that actually costs you.</p></div>
+<div class="roi-box">
+<div class="roi-row"><span class="label">Missed calls per week</span><span class="value">10</span></div>
+<div class="roi-row"><span class="label">Average job value</span><span class="value">$350</span></div>
+<div class="roi-row"><span class="label">Calls that convert to jobs</span><span class="value">20%</span></div>
+<div class="roi-row"><span class="label">Revenue lost per month</span><span class="value" style="color:var(--orange)">$2,800</span></div>
+<div class="roi-row highlight"><span class="label">CallIntakeHQ cost</span><span class="value">$99–$249/mo</span></div>
+<p class="roi-footnote">One rescued call covers your entire year. Everything after that is pure profit.</p>
+</div></div></div></section>
+
+<section class="guarantee"><div class="container"><div class="guarantee-inner">
+<div class="guarantee-icon">🛡️</div>
+<h2>Zero Risk. Full Confidence.</h2>
+<p>We know you're trusting us with your most valuable asset — your customer calls. That's why we make it impossible to lose.</p>
+<div class="guarantee-points">
+<div class="guarantee-point"><div class="check">✓</div>7-day free trial</div>
+<div class="guarantee-point"><div class="check">✓</div>No credit card required</div>
+<div class="guarantee-point"><div class="check">✓</div>Cancel anytime, no questions</div>
+<div class="guarantee-point"><div class="check">✓</div>Your number stays yours</div>
+</div></div></div></section>
+
+<section class="faq" id="faq"><div class="container">
+<div class="faq-header"><h2>Frequently Asked Questions</h2></div>
+<div class="faq-list">
+<div class="faq-item"><div class="faq-question">Do I need to change my phone number?</div><div class="faq-answer"><p>No. You keep your existing business number. Just set up conditional call forwarding to your CallIntakeHQ number when you can't answer — it takes 30 seconds on any phone.</p></div></div>
+<div class="faq-item"><div class="faq-question">Does the AI sound robotic?</div><div class="faq-answer"><p>Not at all. Our AI uses natural-sounding voice technology and speaks in a friendly, professional tone. It uses your business name and follows a conversation — not a script. Most callers don't realize it's AI.</p></div></div>
+<div class="faq-item"><div class="faq-question">How fast will I get the call summary?</div><div class="faq-answer"><p>Instantly. As soon as the call ends, you receive an email with the caller's name, location, problem description, and urgency rating. Usually within 30 seconds.</p></div></div>
+<div class="faq-item"><div class="faq-question">What if I want to cancel?</div><div class="faq-answer"><p>Cancel anytime. No contracts, no cancellation fees, no questions asked. We'll even help you transition your call forwarding back. But most customers stay — because the ROI is obvious from week one.</p></div></div>
+<div class="faq-item"><div class="faq-question">How do the automatic reviews work?</div><div class="faq-answer"><p>On the Pro plan, after you mark a job as completed, we automatically send the customer a friendly SMS with a direct link to leave a Google review. It's one tap for them.</p></div></div>
+<div class="faq-item"><div class="faq-question">Is there a contract or setup fee?</div><div class="faq-answer"><p>No contracts. No setup fee. Start with a free 7-day trial, and only pay if you love it. Your AI receptionist is ready within the hour.</p></div></div>
+</div></div></section>
+
+<section class="final-cta" id="start"><div class="container"><div class="final-cta-content">
+<h2>Ready to stop losing <em>$50K/year</em> to missed calls?</h2>
+<p>7-day free trial. No credit card required. Your AI receptionist is ready in under an hour.</p>
+<a href="mailto:hello@callintakehq.com?subject=Free%20Trial%20Request&body=Hi%2C%20I'd%20like%20to%20start%20a%20free%20trial%20for%20my%20plumbing%20business.%0A%0ABusiness%20name%3A%20%0ACity%3A%20%0APhone%20number%3A%20" class="btn btn-primary">Start Your Free Trial →</a>
+</div></div></section>
+
+<footer><div class="container">
+<p style="margin-bottom:12px"><a href="#" class="logo" style="justify-content:center;font-size:18px"><div class="logo-icon" style="width:30px;height:30px;font-size:14px">📞</div>CallIntakeHQ</a></p>
+<p>AI-powered call management for plumbing professionals.</p>
+<p style="margin-top:8px"><a href="mailto:hello@callintakehq.com">hello@callintakehq.com</a></p>
+<p style="margin-top:24px;font-size:13px;color:#3a4555">© 2026 CallIntakeHQ. All rights reserved.</p>
+</div></footer>
+
+<script>
+document.querySelectorAll('.faq-question').forEach(q=>{q.addEventListener('click',()=>{const item=q.parentElement;document.querySelectorAll('.faq-item').forEach(i=>{if(i!==item)i.classList.remove('open')});item.classList.toggle('open')})});
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const target=document.querySelector(a.getAttribute('href'));if(target)target.scrollIntoView({behavior:'smooth',block:'start'})})});
+</script>
+</body>
+</html>
