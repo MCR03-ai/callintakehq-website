@@ -3,266 +3,757 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CallIntakeHQ – Never Lose a Job to a Missed Call</title>
-<meta name="description" content="Turn missed calls into job details — automatically. Stop losing $50K/year in jobs you never knew about. Built for HVAC, plumbing, electrical &amp; more.">
+<title>Call Intake HQ – Never Miss a Job Again</title>
+<meta name="description" content="AI-powered call answering for HVAC, plumbing & home service businesses. Stop losing $50K/year to missed calls.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--navy:#0B1D33;--navy-light:#122844;--blue:#2E8CFF;--blue-glow:rgba(46,140,255,0.15);--teal:#00D4AA;--teal-glow:rgba(0,212,170,0.12);--orange:#FF6B35;--white:#FFFFFF;--gray-100:#F4F6F9;--gray-200:#E2E7EE;--gray-400:#8B95A5;--gray-600:#5A6577;--gray-800:#2D3748;--serif:'Instrument Serif',Georgia,serif;--sans:'DM Sans',-apple-system,sans-serif}
-html{scroll-behavior:smooth}
-body{font-family:var(--sans);color:var(--gray-800);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-.container{max-width:1140px;margin:0 auto;padding:0 24px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:16px 32px;border-radius:8px;font-family:var(--sans);font-size:16px;font-weight:600;text-decoration:none;transition:all .3s ease;cursor:pointer;border:none}
-.btn-primary{background:var(--blue);color:var(--white);box-shadow:0 4px 20px rgba(46,140,255,.35)}
-.btn-primary:hover{background:#1a7aee;transform:translateY(-2px);box-shadow:0 6px 28px rgba(46,140,255,.45)}
-.btn-outline{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.3)}
-.btn-outline:hover{border-color:var(--white);background:rgba(255,255,255,.08)}
-.btn-dark{background:var(--navy);color:var(--white);box-shadow:0 4px 20px rgba(11,29,51,.25)}
-.btn-dark:hover{background:var(--navy-light);transform:translateY(-2px)}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,29,51,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
-.nav-inner{display:flex;justify-content:space-between;align-items:center;max-width:1140px;margin:0 auto;padding:16px 24px}
-.logo{font-family:var(--sans);font-weight:700;font-size:20px;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:10px}
-.logo-icon{width:36px;height:36px;background:var(--blue);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;color:white}
-.nav-links{display:flex;align-items:center;gap:32px}
-.nav-links a{color:var(--gray-400);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
-.nav-links a:hover{color:var(--white)}
-.nav-cta{padding:10px 22px!important;font-size:14px!important;border-radius:6px!important}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --navy: #0B1D33;
+  --navy-light: #132B4A;
+  --blue: #2E8BFF;
+  --blue-glow: rgba(46, 139, 255, 0.15);
+  --cyan: #00D4AA;
+  --cyan-glow: rgba(0, 212, 170, 0.12);
+  --white: #FFFFFF;
+  --gray-100: #F4F6F9;
+  --gray-200: #E2E7EE;
+  --gray-400: #8B95A5;
+  --gray-600: #5A6577;
+  --red: #FF4757;
+  --orange: #FF8C42;
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--navy);
+  background: var(--white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+.badge {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue);
+  background: var(--blue-glow);
+  padding: 6px 14px;
+  border-radius: 100px;
+  margin-bottom: 18px;
+}
+.badge--cyan { color: var(--cyan); background: var(--cyan-glow); }
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--gray-200);
+  transition: box-shadow 0.3s;
+}
+nav.scrolled { box-shadow: 0 2px 24px rgba(11,29,51,0.08); }
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.logo {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--navy);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.logo-icon {
+  width: 32px; height: 32px;
+  background: var(--blue);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+}
+.logo-icon svg { width: 18px; height: 18px; }
+.nav-links { display: flex; align-items: center; gap: 32px; }
+.nav-links a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gray-600);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--navy); }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 12px 28px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s;
+}
+.btn--primary {
+  background: var(--blue);
+  color: var(--white);
+  box-shadow: 0 4px 16px rgba(46,139,255,0.3);
+}
+.btn--primary:hover {
+  background: #1a7aef;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(46,139,255,0.4);
+}
+.btn--outline {
+  background: transparent;
+  color: var(--navy);
+  border: 2px solid var(--gray-200);
+}
+.btn--outline:hover { border-color: var(--blue); color: var(--blue); }
+.btn--large { padding: 16px 36px; font-size: 16px; border-radius: 12px; }
+.btn--white {
+  background: var(--white);
+  color: var(--navy);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+.btn--white:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(0,0,0,0.2); }
 
 /* HERO */
-.hero{background:var(--navy);padding:160px 0 100px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-50%;right:-20%;width:800px;height:800px;background:radial-gradient(circle,var(--blue-glow) 0%,transparent 70%);pointer-events:none}
-.hero::after{content:'';position:absolute;bottom:-30%;left:-10%;width:600px;height:600px;background:radial-gradient(circle,var(--teal-glow) 0%,transparent 70%);pointer-events:none}
-.hero-content{position:relative;z-index:2;max-width:720px}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,212,170,.1);border:1px solid rgba(0,212,170,.25);border-radius:100px;padding:8px 18px;margin-bottom:28px;font-size:13px;font-weight:600;color:var(--teal);letter-spacing:.5px;text-transform:uppercase}
-.hero-badge span{display:inline-block;width:6px;height:6px;background:var(--teal);border-radius:50%;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(40px,5.5vw,64px);line-height:1.1;color:var(--white);margin-bottom:24px}
-.hero h1 em{font-style:italic;color:var(--teal);text-decoration:underline;text-decoration-color:rgba(0,212,170,.3);text-underline-offset:6px}
-.hero p{font-size:19px;line-height:1.65;color:var(--gray-400);margin-bottom:36px;max-width:560px}
-.hero-buttons{display:flex;gap:16px;flex-wrap:wrap}
-.hero-stats{display:flex;gap:48px;margin-top:64px;padding-top:40px;border-top:1px solid rgba(255,255,255,.08)}
-.hero-stat h3{font-family:var(--serif);font-size:36px;color:var(--teal);font-weight:400}
-.hero-stat p{font-size:13px;color:var(--gray-400);margin-top:4px;text-transform:uppercase;letter-spacing:.5px}
+.hero {
+  padding: 140px 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -40%; right: -20%;
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, var(--blue-glow) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: 56px;
+  line-height: 1.1;
+  color: var(--navy);
+  margin-bottom: 24px;
+}
+.hero h1 em { font-style: italic; color: var(--blue); }
+.hero p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--gray-600);
+  margin-bottom: 36px;
+  max-width: 480px;
+}
+.hero-ctas { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.hero-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--gray-400);
+}
+.hero-note svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+.hero-visual { position: relative; display: flex; justify-content: center; }
+.phone-mockup {
+  width: 300px;
+  background: var(--navy);
+  border-radius: 28px;
+  padding: 12px;
+  box-shadow: 0 32px 64px rgba(11,29,51,0.25), 0 0 0 1px rgba(255,255,255,0.1) inset;
+  position: relative;
+  z-index: 2;
+}
+.phone-screen {
+  background: var(--navy-light);
+  border-radius: 18px;
+  padding: 24px 18px;
+  min-height: 420px;
+}
+.phone-header { text-align: center; margin-bottom: 20px; }
+.phone-header .time { color: var(--gray-400); font-size: 12px; font-weight: 600; }
+.phone-header .title { color: var(--white); font-size: 16px; font-weight: 600; margin-top: 12px; }
+.phone-header .subtitle { color: var(--gray-400); font-size: 12px; margin-top: 4px; }
+.call-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 10px;
+  animation: fadeSlideUp 0.6s ease-out both;
+}
+.call-card:nth-child(2) { animation-delay: 0.15s; }
+.call-card:nth-child(3) { animation-delay: 0.3s; }
+.call-card-top { display: flex; justify-content: space-between; align-items: start; margin-bottom: 8px; }
+.call-card-name { color: var(--white); font-size: 14px; font-weight: 600; }
+.call-card-time { color: var(--gray-400); font-size: 11px; }
+.call-card-issue { color: var(--gray-400); font-size: 12px; margin-bottom: 8px; line-height: 1.4; }
+.call-card-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.04em; }
+.tag--urgent { background: rgba(255,71,87,0.15); color: var(--red); }
+.tag--medium { background: rgba(255,140,66,0.15); color: var(--orange); }
+.tag--low { background: rgba(0,212,170,0.12); color: var(--cyan); }
+.tag--distance { background: rgba(46,139,255,0.12); color: var(--blue); }
+
+.floating-notif {
+  position: absolute;
+  top: 60px; right: -30px;
+  background: var(--white);
+  border-radius: 14px;
+  padding: 14px 18px;
+  box-shadow: 0 12px 40px rgba(11,29,51,0.15);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 3;
+  animation: floatBounce 3s ease-in-out infinite;
+}
+.notif-icon {
+  width: 40px; height: 40px;
+  background: rgba(0,212,170,0.1);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.notif-icon svg { width: 20px; height: 20px; color: var(--cyan); }
+.notif-text { font-size: 13px; font-weight: 600; color: var(--navy); line-height: 1.3; }
+.notif-sub { font-size: 11px; color: var(--gray-400); font-weight: 400; }
+
+.floating-review {
+  position: absolute;
+  bottom: 40px; left: -40px;
+  background: var(--white);
+  border-radius: 14px;
+  padding: 14px 18px;
+  box-shadow: 0 12px 40px rgba(11,29,51,0.15);
+  z-index: 3;
+  animation: floatBounce 3s ease-in-out infinite 1.5s;
+}
+.review-stars { color: #F5A623; font-size: 14px; letter-spacing: 2px; margin-bottom: 4px; }
+.review-text { font-size: 12px; color: var(--gray-600); line-height: 1.4; max-width: 180px; }
+.review-author { font-size: 11px; color: var(--gray-400); margin-top: 4px; }
+
+@keyframes fadeSlideUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes floatBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+/* STATS */
+.stats-bar { padding: 48px 0; border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); }
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center; }
+.stat-number { font-family: var(--font-display); font-size: 44px; color: var(--navy); line-height: 1; }
+.stat-number em { font-style: italic; color: var(--blue); }
+.stat-label { font-size: 14px; color: var(--gray-400); margin-top: 8px; }
 
 /* PROBLEM */
-.problem{padding:100px 0;background:var(--gray-100)}
-.problem-header{text-align:center;max-width:700px;margin:0 auto 60px}
-.section-label{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--blue);margin-bottom:16px}
-.problem-header h2{font-family:var(--serif);font-size:clamp(32px,4vw,44px);line-height:1.2;color:var(--navy);margin-bottom:16px}
-.problem-header p{font-size:18px;color:var(--gray-600);line-height:1.6}
-.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.problem-card{background:var(--white);border-radius:16px;padding:36px;border:1px solid var(--gray-200);transition:transform .3s,box-shadow .3s}
-.problem-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.08)}
-.problem-icon{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px}
-.problem-card:nth-child(1) .problem-icon{background:#FFF0EB}
-.problem-card:nth-child(2) .problem-icon{background:#E8F5FF}
-.problem-card:nth-child(3) .problem-icon{background:#E6FFF8}
-.problem-card h3{font-size:20px;font-weight:700;color:var(--navy);margin-bottom:10px}
-.problem-card .stat{font-family:var(--serif);font-size:32px;color:var(--orange);margin-bottom:8px}
-.problem-card p{font-size:15px;color:var(--gray-600);line-height:1.6}
+.problem { padding: 100px 0; background: var(--gray-100); }
+.section-header { text-align: center; max-width: 640px; margin: 0 auto 60px; }
+.section-header h2 { font-family: var(--font-display); font-size: 42px; line-height: 1.15; color: var(--navy); margin-bottom: 16px; }
+.section-header h2 em { font-style: italic; color: var(--blue); }
+.section-header p { font-size: 17px; line-height: 1.7; color: var(--gray-600); }
+.problem-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.problem-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 32px;
+  border: 1px solid var(--gray-200);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.problem-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(11,29,51,0.08); }
+.problem-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 24px; }
+.problem-icon--red { background: rgba(255,71,87,0.1); }
+.problem-icon--orange { background: rgba(255,140,66,0.1); }
+.problem-icon--blue { background: rgba(46,139,255,0.1); }
+.problem-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+.problem-card p { font-size: 15px; line-height: 1.6; color: var(--gray-600); }
+.problem-stat { font-family: var(--font-display); font-size: 32px; color: var(--red); margin-top: 16px; }
 
-/* HOW */
-.how{padding:100px 0}
-.how-header{text-align:center;max-width:620px;margin:0 auto 70px}
-.how-header h2{font-family:var(--serif);font-size:clamp(32px,4vw,44px);line-height:1.2;color:var(--navy);margin-bottom:16px}
-.how-header p{font-size:18px;color:var(--gray-600);line-height:1.6}
-.how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;position:relative}
-.how-steps::before{content:'';position:absolute;top:36px;left:15%;right:15%;height:2px;background:linear-gradient(90deg,var(--blue),var(--teal));opacity:.2}
-.how-step{text-align:center;position:relative}
-.step-num{width:72px;height:72px;border-radius:50%;margin:0 auto 24px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:28px;color:var(--white);background:linear-gradient(135deg,var(--blue),var(--navy));box-shadow:0 8px 24px rgba(46,140,255,.25);position:relative;z-index:2}
-.how-step h3{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:10px}
-.how-step p{font-size:15px;color:var(--gray-600);line-height:1.6;max-width:280px;margin:0 auto}
+/* HOW IT WORKS */
+.how { padding: 100px 0; }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 60px; position: relative; }
+.steps::before { content: ''; position: absolute; top: 40px; left: 16.66%; right: 16.66%; height: 2px; background: linear-gradient(90deg, var(--blue), var(--cyan)); z-index: 0; }
+.step { text-align: center; position: relative; z-index: 1; }
+.step-number {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 3px solid var(--blue);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 24px;
+  font-family: var(--font-display);
+  font-size: 32px;
+  color: var(--blue);
+  box-shadow: 0 8px 24px var(--blue-glow);
+}
+.step h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+.step p { font-size: 15px; color: var(--gray-600); line-height: 1.6; max-width: 280px; margin: 0 auto; }
 
 /* FEATURES */
-.features{padding:100px 0;background:var(--navy);color:var(--white)}
-.features-header{text-align:center;max-width:640px;margin:0 auto 60px}
-.features-header .section-label{color:var(--teal)}
-.features-header h2{font-family:var(--serif);font-size:clamp(32px,4vw,44px);line-height:1.2;color:var(--white)}
-.features-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-.feature-card{background:var(--navy-light);border-radius:16px;padding:36px;border:1px solid rgba(255,255,255,.06);transition:border-color .3s}
-.feature-card:hover{border-color:rgba(46,140,255,.3)}
-.feature-emoji{font-size:28px;margin-bottom:16px;display:block}
-.feature-card h3{font-size:18px;font-weight:700;margin-bottom:10px}
-.feature-card p{font-size:15px;color:var(--gray-400);line-height:1.6}
+.features { padding: 100px 0; background: var(--navy); color: var(--white); }
+.features .section-header h2 { color: var(--white); }
+.features .section-header p { color: var(--gray-400); }
+.features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.feature-card {
+  background: var(--navy-light);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  gap: 18px;
+  transition: border-color 0.3s;
+}
+.feature-card:hover { border-color: rgba(46,139,255,0.3); }
+.feature-icon { width: 44px; height: 44px; background: var(--blue-glow); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 20px; }
+.feature-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.feature-card p { font-size: 14px; color: var(--gray-400); line-height: 1.6; }
 
 /* PRICING */
-.pricing{padding:100px 0;background:var(--gray-100)}
-.pricing-header{text-align:center;max-width:600px;margin:0 auto 60px}
-.pricing-header h2{font-family:var(--serif);font-size:clamp(32px,4vw,44px);line-height:1.2;color:var(--navy);margin-bottom:16px}
-.pricing-header p{font-size:18px;color:var(--gray-600);line-height:1.6}
-.pricing-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;max-width:820px;margin:0 auto}
-.pricing-card{background:var(--white);border-radius:20px;padding:44px 36px;border:2px solid var(--gray-200);transition:transform .3s,box-shadow .3s;position:relative}
-.pricing-card:hover{transform:translateY(-4px)}
-.pricing-card.featured{border-color:var(--blue);box-shadow:0 16px 48px rgba(46,140,255,.15)}
-.popular-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--blue);color:white;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:6px 20px;border-radius:100px}
-.pricing-card h3{font-size:18px;font-weight:600;color:var(--gray-600);margin-bottom:16px}
-.pricing-price{font-family:var(--serif);font-size:52px;color:var(--navy);margin-bottom:4px}
-.pricing-price span{font-family:var(--sans);font-size:16px;color:var(--gray-400)}
-.pricing-desc{font-size:14px;color:var(--gray-600);margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--gray-200)}
-.pricing-features{list-style:none;margin-bottom:32px}
-.pricing-features li{display:flex;align-items:flex-start;gap:12px;font-size:15px;color:var(--gray-800);padding:8px 0}
-.pricing-features li::before{content:'✓';color:var(--teal);font-weight:700;flex-shrink:0;margin-top:1px}
-.pricing-features li.disabled{color:var(--gray-400)}
-.pricing-features li.disabled::before{content:'—';color:var(--gray-400)}
-.pricing-card .btn{width:100%;justify-content:center}
+.pricing { padding: 100px 0; background: var(--gray-100); }
+.pricing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; max-width: 820px; margin: 0 auto; }
+.price-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 40px;
+  border: 2px solid var(--gray-200);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+.price-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(11,29,51,0.1); }
+.price-card--featured { border-color: var(--blue); box-shadow: 0 16px 48px rgba(46,139,255,0.15); }
+.price-card--featured::before {
+  content: 'LAUNCH RATE';
+  position: absolute;
+  top: -13px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--blue);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 5px 16px;
+  border-radius: 100px;
+}
+.price-name { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+.price-desc { font-size: 14px; color: var(--gray-400); margin-bottom: 24px; }
+.price-amount { font-family: var(--font-display); font-size: 52px; color: var(--navy); line-height: 1; }
+.price-amount span { font-size: 18px; color: var(--gray-400); font-family: var(--font-body); }
+.price-period { font-size: 14px; color: var(--gray-400); margin-bottom: 28px; }
+.price-features { list-style: none; margin-bottom: 32px; }
+.price-features li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--gray-600); padding: 8px 0; border-bottom: 1px solid var(--gray-100); }
+.price-features li:last-child { border-bottom: none; }
+.check { color: var(--cyan); font-weight: 700; font-size: 16px; }
+.cross { color: var(--gray-200); font-size: 16px; }
 
-/* ROI */
-.roi{padding:100px 0;background:var(--white)}
-.roi-inner{max-width:740px;margin:0 auto;text-align:center}
-.roi-header h2{font-family:var(--serif);font-size:clamp(32px,4vw,44px);color:var(--navy);margin-bottom:16px}
-.roi-header p{font-size:18px;color:var(--gray-600);margin-bottom:48px}
-.roi-box{background:var(--navy);border-radius:20px;padding:48px;color:var(--white);text-align:left}
-.roi-row{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.08)}
-.roi-row:last-child{border:none}
-.roi-row .label{font-size:16px;color:var(--gray-400)}
-.roi-row .value{font-family:var(--serif);font-size:24px}
-.roi-row.highlight .value{color:var(--teal);font-size:32px}
-.roi-row.highlight{padding:24px 0 8px;border:none}
-.roi-footnote{font-size:13px;color:var(--gray-400);margin-top:20px;text-align:center}
-
-/* GUARANTEE */
-.guarantee{padding:80px 0;background:var(--gray-100)}
-.guarantee-inner{max-width:720px;margin:0 auto;text-align:center;background:var(--white);border-radius:20px;padding:52px 44px;border:2px solid var(--gray-200)}
-.guarantee-icon{font-size:48px;margin-bottom:20px}
-.guarantee-inner h2{font-family:var(--serif);font-size:32px;color:var(--navy);margin-bottom:16px}
-.guarantee-inner p{font-size:17px;color:var(--gray-600);line-height:1.65;max-width:540px;margin:0 auto}
-.guarantee-points{display:flex;justify-content:center;gap:40px;margin-top:32px;flex-wrap:wrap}
-.guarantee-point{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:var(--navy)}
-.guarantee-point .check{width:28px;height:28px;border-radius:50%;background:rgba(0,212,170,.12);color:var(--teal);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700}
-
-/* FAQ */
-.faq{padding:100px 0}
-.faq-header{text-align:center;max-width:600px;margin:0 auto 60px}
-.faq-header h2{font-family:var(--serif);font-size:clamp(32px,4vw,44px);color:var(--navy)}
-.faq-list{max-width:700px;margin:0 auto}
-.faq-item{border-bottom:1px solid var(--gray-200);padding:24px 0}
-.faq-question{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:17px;font-weight:600;color:var(--navy)}
-.faq-question::after{content:'+';font-size:24px;color:var(--blue);transition:transform .3s}
-.faq-item.open .faq-question::after{transform:rotate(45deg)}
-.faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s}
-.faq-item.open .faq-answer{max-height:200px;padding-top:16px}
-.faq-answer p{font-size:15px;color:var(--gray-600);line-height:1.65}
+/* TESTIMONIALS */
+.testimonials { padding: 100px 0; }
+.testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.testimonial-card { background: var(--gray-100); border-radius: 16px; padding: 32px; }
+.testimonial-stars { color: #F5A623; font-size: 16px; letter-spacing: 2px; margin-bottom: 16px; }
+.testimonial-text { font-size: 15px; line-height: 1.7; color: var(--gray-600); font-style: italic; margin-bottom: 20px; }
+.testimonial-author { display: flex; align-items: center; gap: 12px; }
+.testimonial-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--blue-glow); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--blue); font-size: 14px; }
+.testimonial-name { font-size: 14px; font-weight: 600; }
+.testimonial-role { font-size: 12px; color: var(--gray-400); }
 
 /* CTA */
-.final-cta{padding:100px 0;background:var(--navy);text-align:center;position:relative;overflow:hidden}
-.final-cta::before{content:'';position:absolute;top:-50%;left:50%;transform:translateX(-50%);width:1000px;height:1000px;background:radial-gradient(circle,var(--blue-glow) 0%,transparent 60%)}
-.final-cta-content{position:relative;z-index:2;max-width:620px;margin:0 auto}
-.final-cta h2{font-family:var(--serif);font-size:clamp(36px,4.5vw,52px);color:var(--white);line-height:1.15;margin-bottom:20px}
-.final-cta h2 em{color:var(--teal);font-style:italic}
-.final-cta p{font-size:18px;color:var(--gray-400);margin-bottom:36px}
-.final-cta .btn-primary{font-size:18px;padding:18px 40px}
+.cta { padding: 100px 0; background: var(--navy); text-align: center; position: relative; overflow: hidden; }
+.cta::before { content: ''; position: absolute; top: -50%; left: 50%; transform: translateX(-50%); width: 1000px; height: 1000px; background: radial-gradient(circle, rgba(46,139,255,0.12) 0%, transparent 60%); }
+.cta h2 { font-family: var(--font-display); font-size: 48px; color: var(--white); margin-bottom: 16px; position: relative; }
+.cta h2 em { font-style: italic; color: var(--blue); }
+.cta p { font-size: 18px; color: var(--gray-400); margin-bottom: 36px; position: relative; }
+.cta .btn { position: relative; }
+.cta-note { font-size: 13px; color: var(--gray-400); margin-top: 16px; position: relative; }
 
-footer{background:#070F1A;padding:48px 0;text-align:center}
-footer p{font-size:14px;color:var(--gray-600)}
-footer a{color:var(--gray-400);text-decoration:none}
-@media(max-width:768px){.nav-links{display:none}.hero{padding:120px 0 70px}.hero-stats{flex-direction:column;gap:24px}.problem-grid,.features-grid,.how-steps{grid-template-columns:1fr}.pricing-grid{grid-template-columns:1fr;max-width:420px}.how-steps::before{display:none}.hero-buttons{flex-direction:column}.hero-buttons .btn{width:100%;justify-content:center}.roi-box{padding:28px}.roi-row{flex-direction:column;align-items:flex-start;gap:4px}.guarantee-points{flex-direction:column;align-items:center;gap:16px}.guarantee-inner{padding:36px 24px}}
+/* FAQ */
+.faq { padding: 100px 0; }
+.faq-list { max-width: 700px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid var(--gray-200); padding: 24px 0; }
+.faq-question { font-size: 16px; font-weight: 600; color: var(--navy); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; width: 100%; background: none; border: none; text-align: left; font-family: var(--font-body); }
+.faq-toggle { width: 28px; height: 28px; border-radius: 50%; background: var(--gray-100); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px; color: var(--gray-400); transition: transform 0.3s, background 0.3s; }
+.faq-item.active .faq-toggle { transform: rotate(45deg); background: var(--blue-glow); color: var(--blue); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; }
+.faq-item.active .faq-answer { max-height: 200px; padding-top: 16px; }
+.faq-answer p { font-size: 15px; color: var(--gray-600); line-height: 1.7; }
+
+footer { padding: 40px 0; border-top: 1px solid var(--gray-200); text-align: center; }
+footer p { font-size: 13px; color: var(--gray-400); }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; text-align: center; }
+  .hero h1 { font-size: 40px; }
+  .hero p { margin: 0 auto 36px; }
+  .hero-ctas { justify-content: center; }
+  .hero-visual { margin-top: 40px; }
+  .floating-notif { right: 0; top: 20px; }
+  .floating-review { left: 0; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .problem-cards, .steps, .features-grid, .testimonial-grid { grid-template-columns: 1fr; }
+  .testimonial-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .steps::before { display: none; }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
+  .section-header h2 { font-size: 32px; }
+  .nav-links a:not(.btn) { display: none; }
+}
+@media (max-width: 600px) {
+  .hero { padding: 110px 0 60px; }
+  .hero h1 { font-size: 32px; }
+  .phone-mockup { width: 260px; }
+  .floating-notif, .floating-review { display: none; }
+  .stat-number { font-size: 32px; }
+  .cta h2 { font-size: 32px; }
+}
 </style>
 </head>
 <body>
 
-<nav><div class="nav-inner"><a href="#" class="logo"><div class="logo-icon">🛡️</div>CallIntakeHQ</a><div class="nav-links"><a href="#how">How It Works</a><a href="#features">What You Get</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="#start" class="btn btn-primary nav-cta">Rescue Your Jobs →</a></div></div></nav>
+<nav id="nav">
+  <div class="container nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      </div>
+      Call Intake HQ
+    </a>
+    <div class="nav-links">
+      <a href="#how">How It Works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#cta" class="btn btn--primary">Start Free Trial</a>
+    </div>
+  </div>
+</nav>
 
-<!-- HERO — Job Rescue positioning -->
-<section class="hero"><div class="container"><div class="hero-content">
-<div class="hero-badge"><span></span> Built for home service pros</div>
-<h1>Every missed call is a <em>lost job</em></h1>
-<p>You're on a job. Your phone rings. You can't pick up. That caller? They just hired your competitor. CallIntakeHQ captures every lead you'd normally lose — name, number, problem, urgency — and delivers it to your inbox before the caller moves on.</p>
-<div class="hero-buttons"><a href="#start" class="btn btn-primary">Start Rescuing Jobs — 7 Days Free →</a><a href="#how" class="btn btn-outline">See How It Works</a></div>
-<div class="hero-stats"><div class="hero-stat"><h3>40%</h3><p>of calls missed by contractors</p></div><div class="hero-stat"><h3>$50K+</h3><p>in jobs lost per year</p></div><div class="hero-stat"><h3>95%</h3><p>of callers won't leave voicemail</p></div></div>
-</div></div></section>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="badge">Built for Home Service Pros</span>
+      <h1>Stop losing jobs to <em>missed calls</em></h1>
+      <p>Your AI receptionist answers every call, captures lead details, prioritizes jobs by urgency &amp; distance — and emails you the summary within 30 seconds. All on autopilot.</p>
+      <div class="hero-ctas">
+        <a href="#cta" class="btn btn--primary btn--large">Try 7 Days Free →</a>
+        <a href="#how" class="btn btn--outline btn--large">See How It Works</a>
+      </div>
+      <div class="hero-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        No credit card required · Works with your existing number
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="floating-notif">
+        <div class="notif-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div>
+          <div class="notif-text">New lead captured</div>
+          <div class="notif-sub">AC unit dead · 3.1 mi away</div>
+        </div>
+      </div>
+      <div class="phone-mockup">
+        <div class="phone-screen">
+          <div class="phone-header">
+            <div class="time">Today's Calls</div>
+            <div class="title">Call Intake HQ</div>
+            <div class="subtitle">3 new leads · 1 urgent</div>
+          </div>
+          <div class="call-card">
+            <div class="call-card-top">
+              <div class="call-card-name">Sarah Mitchell</div>
+              <div class="call-card-time">9:14 AM</div>
+            </div>
+            <div class="call-card-issue">AC completely dead, 95°F inside, family with infant</div>
+            <div class="call-card-tags">
+              <span class="tag tag--urgent">Emergency</span>
+              <span class="tag tag--distance">1.8 mi</span>
+            </div>
+          </div>
+          <div class="call-card">
+            <div class="call-card-top">
+              <div class="call-card-name">James Cooper</div>
+              <div class="call-card-time">10:42 AM</div>
+            </div>
+            <div class="call-card-issue">Compressor making loud noise, wants same-day visit</div>
+            <div class="call-card-tags">
+              <span class="tag tag--medium">Urgent</span>
+              <span class="tag tag--distance">4.2 mi</span>
+            </div>
+          </div>
+          <div class="call-card">
+            <div class="call-card-top">
+              <div class="call-card-name">Lisa Nguyen</div>
+              <div class="call-card-time">2:18 PM</div>
+            </div>
+            <div class="call-card-issue">Thermostat replacement, not urgent, wants a quote</div>
+            <div class="call-card-tags">
+              <span class="tag tag--low">Standard</span>
+              <span class="tag tag--distance">6.1 mi</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="floating-review">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Mike was here within an hour. Absolutely incredible service!"</div>
+        <div class="review-author">— Collected automatically via Call Intake HQ</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- PROBLEM — Focus on lost revenue -->
-<section class="problem"><div class="container">
-<div class="problem-header"><p class="section-label">The Real Cost</p><h2>You're not just missing calls. You're losing jobs.</h2><p>Every time your phone goes to voicemail, a paying customer calls the next contractor on Google. You'll never even know they called.</p></div>
-<div class="problem-grid">
-<div class="problem-card"><div class="problem-icon">💸</div><div class="stat">$4,000</div><h3>Lost Per Month</h3><p>10 missed calls per week. Average job is $500. Even if 20% convert, that's $4,000/month walking out the door — jobs you never even heard about.</p></div>
-<div class="problem-card"><div class="problem-icon">📵</div><div class="stat">95%</div><h3>Never Leave a Message</h3><p>Almost nobody leaves voicemail anymore. They hang up after 10 seconds and call the next contractor. Your voicemail isn't losing messages — it's losing jobs.</p></div>
-<div class="problem-card"><div class="problem-icon">🔄</div><div class="stat">Zero</div><h3>Second Chances</h3><p>There's no callback. No follow-up. The customer found someone else. Unless you capture their details the moment they call — that job is gone forever.</p></div>
-</div></div></section>
+<section class="stats-bar">
+  <div class="container stats-grid">
+    <div><div class="stat-number"><em>40%</em></div><div class="stat-label">of home service calls go unanswered</div></div>
+    <div><div class="stat-number"><em>95%</em></div><div class="stat-label">of callers won't leave a voicemail</div></div>
+    <div><div class="stat-number">$<em>50K</em>+</div><div class="stat-label">lost revenue per year, on average</div></div>
+    <div><div class="stat-number"><em>93%</em></div><div class="stat-label">of customers read reviews first</div></div>
+  </div>
+</section>
 
-<!-- HOW IT WORKS — Job rescue framing -->
-<section class="how" id="how"><div class="container">
-<div class="how-header"><p class="section-label">How It Works</p><h2>Turn missed calls into rescued jobs</h2><p>When you can't pick up, we capture the job details for you. Every caller. Every time.</p></div>
-<div class="how-steps">
-<div class="how-step"><div class="step-num">1</div><h3>Customer Calls You</h3><p>When you're on a job and can't answer, the call forwards to CallIntakeHQ. The caller hears a warm, professional voice — your business name, not a generic voicemail.</p></div>
-<div class="how-step"><div class="step-num">2</div><h3>We Capture the Job</h3><p>We collect their name, phone number, location, what the problem is, and how urgent it is. Everything you need to call them back and close the job.</p></div>
-<div class="how-step"><div class="step-num">3</div><h3>You Get the Details</h3><p>Within seconds, you receive a clean summary in your inbox: who called, what they need, and how urgent it is. You call back, you land the job. Rescued.</p></div>
-</div></div></section>
+<section class="problem">
+  <div class="container">
+    <div class="section-header">
+      <span class="badge">The Problem</span>
+      <h2>You're on a job. Your phone rings. You <em>can't answer.</em></h2>
+      <p>That caller doesn't leave a voicemail. They call the next HVAC company who picks up. You just lost an $800+ job and you don't even know it.</p>
+    </div>
+    <div class="problem-cards">
+      <div class="problem-card">
+        <div class="problem-icon problem-icon--red">📞</div>
+        <h3>Missed Calls = Missed Revenue</h3>
+        <p>You're on a rooftop replacing a condenser. Your phone buzzes. By the time you check, they've already called someone else.</p>
+        <div class="problem-stat">$4,200/mo lost</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon problem-icon--orange">⭐</div>
+        <h3>Zero Time for Reviews</h3>
+        <p>Happy customers rarely leave reviews unprompted. Your competitor with 200+ reviews gets the Google clicks — you don't.</p>
+        <div class="problem-stat">72% choose by reviews</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon problem-icon--blue">🔄</div>
+        <h3>No Way to Prioritize</h3>
+        <p>When 10 people call in a day, which job do you take first? The closest? Most urgent? Most profitable? Guesswork kills margin.</p>
+        <div class="problem-stat">3.2 hrs/week wasted</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- FEATURES — Job-focused language -->
-<section class="features" id="features"><div class="container">
-<div class="features-header"><p class="section-label">What You Get</p><h2>No more lost jobs. No more guessing.</h2></div>
-<div class="features-grid">
-<div class="feature-card"><span class="feature-emoji">🛡️</span><h3>Every Call Captured</h3><p>When you can't pick up, we do — instantly. No more callers hanging up on voicemail. Every lead is caught, every job detail recorded. Nothing slips through.</p></div>
-<div class="feature-card"><span class="feature-emoji">📋</span><h3>Job Details, Not Just Messages</h3><p>You don't get a vague "someone called." You get: caller name, callback number, location, exact problem, and urgency level. Everything you need to quote and schedule.</p></div>
-<div class="feature-card"><span class="feature-emoji">🎯</span><h3>Pick the Best Jobs First</h3><p>See all your rescued leads sorted by distance, urgency, and estimated job size. Take the most profitable jobs first. Skip the ones that aren't worth the drive.</p></div>
-<div class="feature-card"><span class="feature-emoji">⭐</span><h3>Automatic 5-Star Reviews</h3><p>After you complete a job, we automatically text the customer asking for a Google review. More reviews = higher ranking = more calls = more jobs. The loop runs itself.</p></div>
-<div class="feature-card"><span class="feature-emoji">⚡</span><h3>Ready in Under an Hour</h3><p>No apps to install. No software to learn. We set everything up for you. Just forward your calls when you're busy — your existing number stays the same.</p></div>
-<div class="feature-card"><span class="feature-emoji">📊</span><h3>See What You're Saving</h3><p>Track how many jobs you've rescued, which ones converted, and how much revenue you've recovered. Real numbers, not guesswork.</p></div>
-</div></div></section>
+<section class="how" id="how">
+  <div class="container">
+    <div class="section-header">
+      <span class="badge badge--cyan">How It Works</span>
+      <h2>Three steps. <em>Fully automated.</em></h2>
+      <p>Set it up once, and Call Intake HQ handles the rest. No apps, no dashboards to check, no extra work for you.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>AI Answers Your Calls</h3>
+        <p>When you can't pick up, our AI receptionist answers professionally under your business name. It asks the right questions and captures every detail.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>You Get Smart Summaries</h3>
+        <p>Instantly receive a prioritized summary: caller name, location, problem type, urgency level, and estimated distance from you. Pick the best jobs first.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Reviews Come Automatically</h3>
+        <p>After you complete a job, we automatically send a review request via SMS. Watch your Google rating climb — without lifting a finger.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- PRICING — Job rescue value prop -->
-<section class="pricing" id="pricing"><div class="container">
-<div class="pricing-header"><p class="section-label">Pricing</p><h2></h2><p>One plan. Everything included. No hidden fees. No per-call charges.</p></div>
-<div style="max-width:460px;margin:0 auto;">
-<div class="pricing-card featured" style="border-color:var(--blue);box-shadow:0 16px 48px rgba(46,140,255,.15);">
-<h3>Job Rescue</h3><div class="pricing-price">$199 <span>/month</span></div>
-<p class="pricing-desc">Every missed call captured. Every job detail delivered. Nothing falls through the cracks.</p>
-<ul class="pricing-features"><li>Every missed call captured — unlimited</li><li>Caller name, callback number &amp; location</li><li>Problem description &amp; urgency level</li><li>Instant email with full job details</li><li>Works with your existing phone number</li><li>Ready in under an hour — we set it up for you</li><li>No apps to install, no software to learn</li></ul>
-<a href="#start" class="btn btn-primary" style="margin-top:8px;">Start Your 7-Day Free Trial →</a>
-<p style="text-align:center;font-size:13px;color:var(--gray-400);margin-top:16px;">No credit card required. Cancel anytime.</p>
-</div></div></div></section>
+<section class="features">
+  <div class="container">
+    <div class="section-header">
+      <span class="badge">Everything You Need</span>
+      <h2>Built for pros who'd rather <em>do the work</em> than answer phones</h2>
+      <p>Every feature is designed to save you time, capture more revenue, and grow your reputation — automatically.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🤖</div>
+        <div><h3>AI Receptionist</h3><p>Answers within 2 seconds, 24/7. Sounds professional and captures name, location, problem, and urgency every time.</p></div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📍</div>
+        <div><h3>Distance & Priority Sorting</h3><p>See which jobs are closest to you, most urgent, or most profitable. Route your day smarter, not harder.</p></div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⭐</div>
+        <div><h3>Automatic Review Collection</h3><p>After every completed job, your customer gets an SMS asking for a Google review. Most clients see 2x reviews in 60 days.</p></div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💬</div>
+        <div><h3>AI Review Responses</h3><p>Every Google review gets a thoughtful, personalized reply — written by AI, sounding like you. Boosts your local SEO ranking.</p></div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <div><h3>Reputation Dashboard</h3><p>Track your Google rating trend, review volume, and response rate. See exactly how your online presence is growing.</p></div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <div><h3>Works With Your Number</h3><p>No new phone number needed. Simply forward unanswered calls to your Call Intake HQ line. Setup takes under 5 minutes.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- ROI — Revenue rescue math -->
-<section class="roi"><div class="container"><div class="roi-inner">
-<div class="roi-header"><p class="section-label">The Math</p><h2>What losing calls actually costs you</h2><p>Let's say you miss just 10 calls per week. Here's what that means for your business.</p></div>
-<div class="roi-box">
-<div class="roi-row"><span class="label">Missed calls per week</span><span class="value">10</span></div>
-<div class="roi-row"><span class="label">Average service job</span><span class="value">$500</span></div>
-<div class="roi-row"><span class="label">Calls that would've converted</span><span class="value">20%</span></div>
-<div class="roi-row"><span class="label">Jobs lost per month</span><span class="value" style="color:var(--orange)">8 jobs ($4,000)</span></div>
-<div class="roi-row highlight"><span class="label">CallIntakeHQ cost</span><span class="value">$199/mo</span></div>
-<p class="roi-footnote">Rescue one job and you've covered the entire year. Everything else is profit you would've lost.</p>
-</div></div></div></section>
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="section-header">
+      <span class="badge">Simple Pricing</span>
+      <h2>One missed call costs more than a <em>full month</em></h2>
+      <p>7-day free trial. No credit card required. Cancel anytime.</p>
+    </div>
+    <div class="pricing-grid" style="grid-template-columns:1fr;max-width:460px;">
+      <div class="price-card price-card--featured">
+        <div class="price-name">Call Rescue</div>
+        <div class="price-desc">Everything you need to capture every missed call</div>
+        <div class="price-amount"><span style="text-decoration:line-through;font-size:28px;color:var(--gray-400);font-family:var(--font-body);">$399</span> $199 <span>/ month</span></div>
+        <div class="price-period">Launch rate · Billed monthly · Cancel anytime</div>
+        <ul class="price-features">
+          <li><span class="check">✓</span> AI receptionist — answers 24/7 under your business name</li>
+          <li><span class="check">✓</span> Instant call transcription</li>
+          <li><span class="check">✓</span> Lead details emailed in 30 seconds</li>
+          <li><span class="check">✓</span> Every lead sorted by urgency level</li>
+          <li><span class="check">✓</span> Unlimited calls</li>
+          <li><span class="check">✓</span> Works with your existing number</li>
+          <li><span class="check">✓</span> Full transcript included</li>
+          <li><span class="check">✓</span> Cancel anytime — no contracts</li>
+        </ul>
+        <a href="mailto:mike@callintakehq.com?subject=Free%20Trial%20Request&body=Hi%2C%20I%27d%20like%20to%20try%20CallIntakeHQ%20for%20my%20HVAC%20business.%0A%0ABusiness%20name%3A%20%0ACity%2C%20State%3A%20%0ABest%20phone%20number%3A%20" class="btn btn--primary" style="width:100%;justify-content:center;">Start 7-Day Free Trial →</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- GUARANTEE -->
-<section class="guarantee"><div class="container"><div class="guarantee-inner">
-<div class="guarantee-icon">🛡️</div>
-<h2>Try It Risk-Free</h2>
-<p>You're trusting us with your leads — your livelihood. So we make it impossible to lose. Test it for a full week. If it doesn't rescue jobs, you pay nothing.</p>
-<div class="guarantee-points">
-<div class="guarantee-point"><div class="check">✓</div>7-day free trial</div>
-<div class="guarantee-point"><div class="check">✓</div>No credit card required</div>
-<div class="guarantee-point"><div class="check">✓</div>Cancel anytime</div>
-<div class="guarantee-point"><div class="check">✓</div>Your number stays yours</div>
-</div></div></div></section>
+<section class="testimonials" style="background:var(--gray-100);">
+  <div class="container">
+    <div class="section-header">
+      <span class="badge badge--cyan">Zero Risk</span>
+      <h2>Your calls are your <em>most valuable asset.</em> We treat them that way.</h2>
+    </div>
+    <div class="testimonial-grid" style="grid-template-columns:repeat(4,1fr);">
+      <div class="testimonial-card" style="text-align:center;padding:28px;">
+        <div style="font-size:32px;margin-bottom:12px;">🛡️</div>
+        <div class="testimonial-name">7-Day Free Trial</div>
+        <div class="testimonial-role" style="margin-top:6px;">Full access, no limits</div>
+      </div>
+      <div class="testimonial-card" style="text-align:center;padding:28px;">
+        <div style="font-size:32px;margin-bottom:12px;">💳</div>
+        <div class="testimonial-name">No Credit Card</div>
+        <div class="testimonial-role" style="margin-top:6px;">Pay nothing until day 8</div>
+      </div>
+      <div class="testimonial-card" style="text-align:center;padding:28px;">
+        <div style="font-size:32px;margin-bottom:12px;">🔄</div>
+        <div class="testimonial-name">Cancel Anytime</div>
+        <div class="testimonial-role" style="margin-top:6px;">One click, no questions</div>
+      </div>
+      <div class="testimonial-card" style="text-align:center;padding:28px;">
+        <div style="font-size:32px;margin-bottom:12px;">📱</div>
+        <div class="testimonial-name">Your Number Stays</div>
+        <div class="testimonial-role" style="margin-top:6px;">We just catch what you miss</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- FAQ -->
-<section class="faq" id="faq"><div class="container">
-<div class="faq-header"><h2>Frequently Asked Questions</h2></div>
-<div class="faq-list">
-<div class="faq-item"><div class="faq-question">How is this different from voicemail?</div><div class="faq-answer"><p>Voicemail waits and hopes someone leaves a message. 95% don't. CallIntakeHQ actually talks to your caller, asks the right questions, and delivers you structured job details — name, number, problem, urgency. It's the difference between losing a lead and rescuing a job.</p></div></div>
-<div class="faq-item"><div class="faq-question">Do I need to change my phone number?</div><div class="faq-answer"><p>No. You keep your existing business number. Just set up conditional call forwarding — when you can't answer, the call forwards to us. Takes 30 seconds on any phone. Your customers never see a different number.</p></div></div>
-<div class="faq-item"><div class="faq-question">Will callers know it's not a real person?</div><div class="faq-answer"><p>Most don't. The voice is natural, friendly, and uses your business name. It has a real conversation — not a robotic script. And honestly, your callers care about getting help, not who's picking up.</p></div></div>
-<div class="faq-item"><div class="faq-question">How fast do I get the job details?</div><div class="faq-answer"><p>Within 30 seconds of the call ending. You get an email with the caller's name, phone number, location, problem description, and urgency rating. Call them back fast and you'll land the job before they try someone else.</p></div></div>
-<div class="faq-item"><div class="faq-question">What if I want to cancel?</div><div class="faq-answer"><p>Cancel anytime. No contracts, no fees, no guilt trip. But most contractors stay — because once you see how many jobs you were losing, you don't go back to voicemail.</p></div></div>
-<div class="faq-item"><div class="faq-question">How do the automatic reviews work?</div><div class="faq-answer"><p>On the Pro plan, after you mark a job as done, we text the customer a direct link to leave a Google review. One tap for them. Most contractors double their reviews within 60 days — which means higher Google ranking and more calls coming in.</p></div></div>
-</div></div></section>
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <h2>Frequently asked <em>questions</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">How does the AI receptionist sound?<span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>Professional, friendly, and natural. Callers often don't realize they're speaking with AI. It answers using your business name and asks about the problem, location, and urgency.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Do I need a new phone number?<span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>No. You keep your existing business number. Simply set up call forwarding for unanswered calls to your Call Intake HQ line. Takes about 2 minutes through your phone's settings or carrier app.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What happens after the 7-day trial?<span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>If you love it, your subscription starts automatically. If not, just let us know — no charges, no questions asked. We don't even ask for a credit card upfront.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">How do the automatic reviews work?<span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>After you mark a job as complete, we send your customer a friendly SMS with a direct link to leave a Google review. It's one tap for them. Most businesses see their review count double within 60 days.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Can I cancel anytime?<span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>Yes. No contracts, no cancellation fees. Cancel your subscription at any time with one click. But with the revenue you'll save from missed calls alone, we doubt you'll want to.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">I'm not tech-savvy. Is this complicated?<span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>Not at all. We handle the entire setup for you. All you need to do is forward your unanswered calls — we'll walk you through it. The whole process takes under 5 minutes.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- FINAL CTA -->
-<section class="final-cta" id="start"><div class="container"><div class="final-cta-content">
-<h2>How many jobs did you <em>lose this week</em> without knowing?</h2>
-<p>7-day free trial. No credit card. Your job rescue system is ready in under an hour.</p>
-<a href="/cdn-cgi/l/email-protection#bad2dfd6d6d5fad9dbd6d6d3d4cedbd1dfd2cb94d9d5d785c9cfd8d0dfd9ce87fcc8dfdf9f888aeec8d3dbd69f888ae8dfcbcfdfc9ce9cd8d5dec387f2d39f88f99f888af39dde9f888ad6d3d1df9f888aced59f888ac9cedbc8ce9f888ac8dfc9d9cfd3d4dd9f888ad7d3c9c9dfde9f888ad0d5d8c99f888adcd5c89f888ad7c39f888acad6cfd7d8d3d4dd9f888ad8cfc9d3d4dfc9c9949f8afb9f8afbf8cfc9d3d4dfc9c99f888ad4dbd7df9f89fb9f888a9f8afbf9d3cec39f89fb9f888a9f8afbead2d5d4df9f888ad4cfd7d8dfc89f89fb9f888a" class="btn btn-primary">Start Rescuing Jobs →</a>
-</div></div></section>
+<section class="cta" id="cta">
+  <div class="container">
+    <h2>Ready to stop losing <em>$50K/year</em> to missed calls?</h2>
+    <p>Join HVAC and home service businesses across the US who never miss a lead — on autopilot.</p>
+    <a href="mailto:mike@callintakehq.com?subject=Free%20Trial%20Request&body=Hi%2C%20I%27d%20like%20to%20try%20CallIntakeHQ%20for%20my%20HVAC%20business.%0A%0ABusiness%20name%3A%20%0ACity%2C%20State%3A%20%0ABest%20phone%20number%3A%20" class="btn btn--white btn--large">Start Your Free 7-Day Trial →</a>
+    <div class="cta-note">No credit card required · Setup in under 5 minutes · Cancel anytime</div>
+  </div>
+</section>
 
-<footer><div class="container">
-<p style="margin-bottom:12px"><a href="#" class="logo" style="justify-content:center;font-size:18px"><div class="logo-icon" style="width:30px;height:30px;font-size:14px">🛡️</div>CallIntakeHQ</a></p>
-<p>Stop losing jobs to missed calls.</p>
-<p style="margin-top:8px"><a href="/cdn-cgi/l/email-protection#caa2afa6a6a58aa9aba6a6a3a4beaba1afa2bbe4a9a5a7"><span class="__cf_email__" data-cfemail="3b535e5757547b585a575752554f5a505e534a15585456">[email&#160;protected]</span></a></p>
-<p style="margin-top:24px;font-size:13px;color:#3a4555">© 2026 CallIntakeHQ. All rights reserved.</p>
-</div></footer>
+<footer>
+  <div class="container">
+    <p>&copy; 2026 CallIntakeHQ. All rights reserved.</p>
+    <p style="margin-top:8px;"><a href="/privacy.html" style="color:var(--gray-400);text-decoration:none;">Privacy Policy</a> · <a href="/terms.html" style="color:var(--gray-400);text-decoration:none;">Terms</a> · <a href="mailto:mike@callintakehq.com" style="color:var(--gray-400);text-decoration:none;">mike@callintakehq.com</a></p>
+  </div>
+</footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-document.querySel
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isActive = item.classList.contains('active');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+    if (!isActive) item.classList.add('active');
+  });
+});
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+</body>
+</html>
