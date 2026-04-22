@@ -344,19 +344,6 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(11,29,51,0.08); }
 }
 .price-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(11,29,51,0.1); }
 .price-card--featured { border-color: var(--blue); box-shadow: 0 16px 48px rgba(46,139,255,0.15); }
-.price-card--featured::before {
-  content: 'LAUNCH RATE';
-  position: absolute;
-  top: -13px; left: 50%;
-  transform: translateX(-50%);
-  background: var(--blue);
-  color: var(--white);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  padding: 5px 16px;
-  border-radius: 100px;
-}
 .price-name { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
 .price-desc { font-size: 14px; color: var(--gray-400); margin-bottom: 24px; }
 .price-amount { font-family: var(--font-display); font-size: 52px; color: var(--navy); line-height: 1; }
@@ -453,7 +440,7 @@ footer p { font-size: 13px; color: var(--gray-400); }
     <div>
       <span class="badge">Built for Home Service Pros</span>
       <h1>Stop losing jobs to <em>missed calls</em></h1>
-      <p>Your AI receptionist answers every call, captures lead details, prioritizes jobs by urgency &amp; distance — and emails you the summary within 30 seconds. All on autopilot.</p>
+      <p>Your AI receptionist answers every call, captures the caller's details, sorts leads by urgency — and emails you everything within 30 seconds. All on autopilot.</p>
       <div class="hero-ctas">
         <a href="https://buy.stripe.com/6oUaEZakQaRZ7ek7az9oc00" class="btn btn--primary btn--large">Try 7 Days Free →</a>
         <a href="#how" class="btn btn--outline btn--large">See How It Works</a>
@@ -470,7 +457,7 @@ footer p { font-size: 13px; color: var(--gray-400); }
         </div>
         <div>
           <div class="notif-text">New lead captured</div>
-          <div class="notif-sub">AC unit dead · 3.1 mi away</div>
+          <div class="notif-sub">AC unit dead · Emergency</div>
         </div>
       </div>
       <div class="phone-mockup">
@@ -478,7 +465,7 @@ footer p { font-size: 13px; color: var(--gray-400); }
           <div class="phone-header">
             <div class="time">Today's Calls</div>
             <div class="title">Call Intake HQ</div>
-            <div class="subtitle">3 new leads · 1 urgent</div>
+            <div class="subtitle">3 new leads emailed to you</div>
           </div>
           <div class="call-card">
             <div class="call-card-top">
@@ -488,7 +475,6 @@ footer p { font-size: 13px; color: var(--gray-400); }
             <div class="call-card-issue">AC completely dead, 95°F inside, family with infant</div>
             <div class="call-card-tags">
               <span class="tag tag--urgent">Emergency</span>
-              <span class="tag tag--distance">1.8 mi</span>
             </div>
           </div>
           <div class="call-card">
@@ -499,7 +485,6 @@ footer p { font-size: 13px; color: var(--gray-400); }
             <div class="call-card-issue">Compressor making loud noise, wants same-day visit</div>
             <div class="call-card-tags">
               <span class="tag tag--medium">Urgent</span>
-              <span class="tag tag--distance">4.2 mi</span>
             </div>
           </div>
           <div class="call-card">
@@ -510,15 +495,14 @@ footer p { font-size: 13px; color: var(--gray-400); }
             <div class="call-card-issue">Thermostat replacement, not urgent, wants a quote</div>
             <div class="call-card-tags">
               <span class="tag tag--low">Standard</span>
-              <span class="tag tag--distance">6.1 mi</span>
             </div>
           </div>
         </div>
       </div>
       <div class="floating-review">
-        <div class="review-stars">★★★★★</div>
-        <div class="review-text">"Mike was here within an hour. Absolutely incredible service!"</div>
-        <div class="review-author">— Collected automatically via Call Intake HQ</div>
+        <div class="review-stars">📧</div>
+        <div class="review-text">Lead emailed to you in 28 seconds — name, number, address, urgency</div>
+        <div class="review-author">— Delivered via CallIntakeHQ</div>
       </div>
     </div>
   </div>
@@ -529,7 +513,7 @@ footer p { font-size: 13px; color: var(--gray-400); }
     <div><div class="stat-number"><em>40%</em></div><div class="stat-label">of home service calls go unanswered</div></div>
     <div><div class="stat-number"><em>95%</em></div><div class="stat-label">of callers won't leave a voicemail</div></div>
     <div><div class="stat-number">$<em>50K</em>+</div><div class="stat-label">lost revenue per year, on average</div></div>
-    <div><div class="stat-number"><em>93%</em></div><div class="stat-label">of customers read reviews first</div></div>
+    <div><div class="stat-number"><em>30</em>s</div><div class="stat-label">lead details emailed to you</div></div>
   </div>
 </section>
 
@@ -548,15 +532,15 @@ footer p { font-size: 13px; color: var(--gray-400); }
         <div class="problem-stat">$4,200/mo lost</div>
       </div>
       <div class="problem-card">
-        <div class="problem-icon problem-icon--orange">⭐</div>
-        <h3>Zero Time for Reviews</h3>
-        <p>Happy customers rarely leave reviews unprompted. Your competitor with 200+ reviews gets the Google clicks — you don't.</p>
-        <div class="problem-stat">72% choose by reviews</div>
+        <div class="problem-icon problem-icon--orange">📱</div>
+        <h3>Voicemail Is a Dead End</h3>
+        <p>80% of callers don't leave a voicemail. They hang up and call the next company. You never even know they called.</p>
+        <div class="problem-stat">80% hang up</div>
       </div>
       <div class="problem-card">
         <div class="problem-icon problem-icon--blue">🔄</div>
         <h3>No Way to Prioritize</h3>
-        <p>When 10 people call in a day, which job do you take first? The closest? Most urgent? Most profitable? Guesswork kills margin.</p>
+        <p>When 10 people call in a day, which job do you take first? The emergency? The big install? Without structured info, you're guessing.</p>
         <div class="problem-stat">3.2 hrs/week wasted</div>
       </div>
     </div>
@@ -578,13 +562,13 @@ footer p { font-size: 13px; color: var(--gray-400); }
       </div>
       <div class="step">
         <div class="step-number">2</div>
-        <h3>You Get Smart Summaries</h3>
-        <p>Instantly receive a prioritized summary: caller name, location, problem type, urgency level, and estimated distance from you. Pick the best jobs first.</p>
+        <h3>You Get an Email in 30 Seconds</h3>
+        <p>Instantly receive a structured email with: caller name, phone number, address, problem description, and urgency level. You know exactly who to call back first.</p>
       </div>
       <div class="step">
         <div class="step-number">3</div>
-        <h3>Reviews Come Automatically</h3>
-        <p>After you complete a job, we automatically send a review request via SMS. Watch your Google rating climb — without lifting a finger.</p>
+        <h3>You Call Back &amp; Close the Job</h3>
+        <p>Call the customer back when you're ready. You have all the details — no phone tag, no guessing what they need. Emergencies get flagged so you never miss a critical job.</p>
       </div>
     </div>
   </div>
@@ -595,7 +579,7 @@ footer p { font-size: 13px; color: var(--gray-400); }
     <div class="section-header">
       <span class="badge">Everything You Need</span>
       <h2>Built for pros who'd rather <em>do the work</em> than answer phones</h2>
-      <p>Every feature is designed to save you time, capture more revenue, and grow your reputation — automatically.</p>
+      <p>Every feature is designed to save you time and capture more revenue — automatically.</p>
     </div>
     <div class="features-grid">
       <div class="feature-card">
@@ -604,19 +588,19 @@ footer p { font-size: 13px; color: var(--gray-400); }
       </div>
       <div class="feature-card">
         <div class="feature-icon">📍</div>
-        <div><h3>Distance & Priority Sorting</h3><p>See which jobs are closest to you, most urgent, or most profitable. Route your day smarter, not harder.</p></div>
+        <div><h3>Urgency Sorting</h3><p>Every lead comes tagged: Emergency, Urgent, Standard, or Low Priority. You always know which call to return first.</p></div>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">⭐</div>
-        <div><h3>Automatic Review Collection</h3><p>After every completed job, your customer gets an SMS asking for a Google review. Most clients see 2x reviews in 60 days.</p></div>
+        <div class="feature-icon">📧</div>
+        <div><h3>Instant Email Delivery</h3><p>Get a structured email within 30 seconds of every call: name, number, address, problem, urgency. Plus the full transcript as backup.</p></div>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">💬</div>
-        <div><h3>AI Review Responses</h3><p>Every Google review gets a thoughtful, personalized reply — written by AI, sounding like you. Boosts your local SEO ranking.</p></div>
+        <div class="feature-icon">📞</div>
+        <div><h3>Unlimited Calls</h3><p>No per-call charges, no caps, no overage fees. Peak AC season with 20 calls a day? Same flat $199/month.</p></div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">📊</div>
-        <div><h3>Reputation Dashboard</h3><p>Track your Google rating trend, review volume, and response rate. See exactly how your online presence is growing.</p></div>
+        <div><h3>Phone Number Verified</h3><p>The AI reads back the caller's number digit by digit and confirms it. No more guessing from garbled voicemails.</p></div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">⚡</div>
@@ -637,16 +621,16 @@ footer p { font-size: 13px; color: var(--gray-400); }
       <div class="price-card price-card--featured">
         <div class="price-name">Call Rescue</div>
         <div class="price-desc">Everything you need to capture every missed call</div>
-        <div class="price-amount"><span style="text-decoration:line-through;font-size:28px;color:var(--gray-400);font-family:var(--font-body);">$399</span> $199 <span>/ month</span></div>
-        <div class="price-period">Launch rate · Billed monthly · Cancel anytime</div>
+        <div class="price-amount">$199 <span>/ month</span></div>
+        <div class="price-period">Billed monthly · Cancel anytime</div>
         <ul class="price-features">
           <li><span class="check">✓</span> AI receptionist — answers 24/7 under your business name</li>
-          <li><span class="check">✓</span> Instant call transcription</li>
-          <li><span class="check">✓</span> Lead details emailed in 30 seconds</li>
+          <li><span class="check">✓</span> Caller details emailed to you in 30 seconds</li>
           <li><span class="check">✓</span> Every lead sorted by urgency level</li>
-          <li><span class="check">✓</span> Unlimited calls</li>
+          <li><span class="check">✓</span> Unlimited calls — no caps, no overage fees</li>
+          <li><span class="check">✓</span> Full call transcript included</li>
+          <li><span class="check">✓</span> Phone number verified digit by digit</li>
           <li><span class="check">✓</span> Works with your existing number</li>
-          <li><span class="check">✓</span> Full transcript included</li>
           <li><span class="check">✓</span> Cancel anytime — no contracts</li>
         </ul>
         <a href="https://buy.stripe.com/6oUaEZakQaRZ7ek7az9oc00" class="btn btn--primary" style="width:100%;justify-content:center;">Start 7-Day Free Trial →</a>
@@ -705,8 +689,8 @@ footer p { font-size: 13px; color: var(--gray-400); }
         <div class="faq-answer"><p>If you love it, your subscription starts automatically. If not, just let us know — no charges, no questions asked. We don't even ask for a credit card upfront.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question">How do the automatic reviews work?<span class="faq-toggle">+</span></button>
-        <div class="faq-answer"><p>After you mark a job as complete, we send your customer a friendly SMS with a direct link to leave a Google review. It's one tap for them. Most businesses see their review count double within 60 days.</p></div>
+        <button class="faq-question">What exactly do I receive after each call?<span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><p>You get an email within 30 seconds with the caller's name, phone number, address, problem description, and urgency level. The full call transcript is included as backup. The phone number also comes from your caller ID data, so it's always accurate.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-question">Can I cancel anytime?<span class="faq-toggle">+</span></button>
